@@ -1,0 +1,9 @@
+#!/bin/sh
+
+startingURL="${1}"
+shift
+searchString=$@
+
+wget --mirror --quiet --no-parent "${startingURL}"
+
+find * -type f -name "msg*.html" -exec grep -q "${searchString}" {} \; -exec sh email-to-cvs {} \;

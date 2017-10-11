@@ -1,0 +1,9 @@
+#!/bin/sh
+
+msg="${1}"
+
+if [ -e ${msg} ]; then
+	awk '/<pre>/,/<\/pre>/' "${msg}" | sed -e 's|<.\{0,1\}pre>||g'
+fi
+
+
