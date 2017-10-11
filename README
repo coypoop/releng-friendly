@@ -1,1 +1,4 @@
 Find releng-friendly commit output from commit message string
+
+Example usage:
+ $  ./commit-from-emails http://mail-index.netbsd.org/source-changes/2017/10/ dual abi
